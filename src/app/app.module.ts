@@ -17,9 +17,10 @@ import { PostCreateComponent } from './features/posts/post-create/post-create.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './features/header/header.component';
 import { PostListComponent } from './features/posts/post-list/post-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './features/auth/login/login.component';
 import { SignupComponent } from './features/auth/signup/signup.component';
+import { AuthInterceptor } from './features/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { SignupComponent } from './features/auth/signup/signup.component';
     MatPaginatorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
