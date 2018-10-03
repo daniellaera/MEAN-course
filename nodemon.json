@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MLAB_PW": "daniel123456",
+        "JWT_KEY": "secret_this_should_be_longer"
+    }
+}
