@@ -9,9 +9,9 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 mongoose.connect(
-    'mongodb://daniellaera:' +
+    'mongodb+srv://daniel:' +
     process.env.MLAB_PW +
-    '@ds157422.mlab.com:57422/udemy-mean',
+    '@cluster0-a5t7w.mongodb.net/test?retryWrites=true',
     { useNewUrlParser: true })
     .then(() => {
         console.log('MongoDB Connected!');
